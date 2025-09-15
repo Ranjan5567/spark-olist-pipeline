@@ -34,4 +34,4 @@ jobs:
       # Step 4: Run Pytest
       - name: Run unit tests
         run: |
-          pytest -v --disable-warnings --tb=long > silver_test_output.log 2>&1
+          pytest -v --disable-warnings
