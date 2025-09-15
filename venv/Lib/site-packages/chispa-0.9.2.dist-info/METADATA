@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: chispa
+Version: 0.9.2
+Summary: Pyspark test helper library
+License: MIT
+Author: MrPowers
+Author-email: matthewkevinpowers@gmail.com
+Requires-Python: >=3.5
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
