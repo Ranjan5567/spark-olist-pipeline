@@ -2,9 +2,9 @@ name: CI - Spark Olist Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build-and-test:
@@ -34,4 +34,4 @@ jobs:
       # Step 4: Run Pytest
       - name: Run unit tests
         run: |
-          pytest -v --disable-warnings
+          pytest -v --disable-warnings --tb=long > silver_test_output.log 2>&1
