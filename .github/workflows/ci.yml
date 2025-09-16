@@ -46,7 +46,7 @@ jobs:
             --ExecutePreprocessor.timeout=1200
       # Step 6: Upload executed notebook as artifact
       - name: Upload executed notebook
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: executed-notebook
+          name: pipeline-notebook
           path: /tmp/run_pipeline_out.ipynb
