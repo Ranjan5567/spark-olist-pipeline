@@ -30,8 +30,16 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
+          pip install jupyter nbconvert delta-spark chispa
       # Step 4: Run Pytest
       - name: Run unit tests
         run: |
           pytest -v --disable-warnings
+      # Step 5: Run full pipeline notebook
+      - name: Run pipeline notebook
+        run: |
+          mkdir -p /tmp/delta  # temp folders for bronze/silver/gold
+          export PYTHONPATH=$PYTHONPATH:$(pwd)/src
+          jupyter nbconvert --to notebook --execute notebooks/run_pipeline.ipynb \
+            --output /tmp/run_pipeline_out.ipynb \
+            --ExecutePreprocessor.timeout=1200
