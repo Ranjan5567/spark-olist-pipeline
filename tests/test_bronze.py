@@ -26,37 +26,7 @@ def spark():
 # -------------------------------
 # Test Orders Table
 # -------------------------------
-<<<<<<< HEAD
-=======
-from pathlib import Path
-import os
-import sys
-import pytest
-from chispa.dataframe_comparer import assert_df_equality
 
-    
-# Set PySpark environment
-os.environ["PYSPARK_PYTHON"] = r"C:\Users\ranjan\Desktop\spark-olist-pipeline\venv\Scripts\python.exe"
-os.environ["PYSPARK_DRIVER_PYTHON"] = r"C:\Users\ranjan\Desktop\spark-olist-pipeline\venv\Scripts\python.exe"
-
-# Add src folder to path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
-
-from bronze import create_spark_session, ingest_csv
-
-# -------------------------------
-# Spark fixture
-# -------------------------------
-@pytest.fixture(scope="session")
-def spark():
-    spark = create_spark_session("TestSpark")
-    yield spark
-    spark.stop()
-
-# -------------------------------
-# Test Orders Table
-# -------------------------------
->>>>>>> 8ca93396f8184a3829dc678a2fadc6a06b7cc020
 def test_ingest_orders_with_partition_and_file_size(spark, tmp_path):
     input_path = "data/olist_orders_dataset.csv"
     output_path = tmp_path / "orders"
