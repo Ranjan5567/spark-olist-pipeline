@@ -6,7 +6,7 @@ from pyspark.sql import Row
 import os 
 import sys
 # Set PySpark environment
-os.environ["PYSPARK_PYTHON"] = sys.executable
+os.environ["PYSPARK_PYTHON"] = r"C:\Users\ranjan\Desktop\spark-olist-pipeline\venv\Scripts\python.exe"
 os.environ["PYSPARK_DRIVER_PYTHON"] = r"C:\Users\ranjan\Desktop\spark-olist-pipeline\venv\Scripts\python.exe"
 
 # Add src folder to path
