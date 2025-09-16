@@ -40,6 +40,7 @@ jobs:
         run: |
           mkdir -p /tmp/delta  # temp folders for bronze/silver/gold
           export PYTHONPATH=$PYTHONPATH:$(pwd)/src
-          jupyter nbconvert --to notebook --execute notebooks/run_pipeline.ipynb \
+          ls src               # debug: confirm notebook exists
+          jupyter nbconvert --to notebook --execute src/run_pipeline.ipynb \
             --output /tmp/run_pipeline_out.ipynb \
             --ExecutePreprocessor.timeout=1200
