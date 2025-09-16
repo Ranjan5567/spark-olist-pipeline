@@ -44,3 +44,9 @@ jobs:
           jupyter nbconvert --to notebook --execute src/run_pipeline.ipynb \
             --output /tmp/run_pipeline_out.ipynb \
             --ExecutePreprocessor.timeout=1200
+      # Step 6: Upload executed notebook as artifact
+      - name: Upload executed notebook
+        uses: actions/upload-artifact@v3
+        with:
+          name: executed-notebook
+          path: /tmp/run_pipeline_out.ipynb
